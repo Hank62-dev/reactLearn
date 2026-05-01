@@ -139,10 +139,14 @@ Description:
 // Object destructuring
 const person = {
     fullName: "Hank Nguyen",
-    studentAge: 20
+    studentAge: 20,
+    profile : {
+        studentID: 200956,
+    }
 };
 
-const { fullName, studentAge } = person;
+//      Cách lấy att trong object của object   |  Cách đặt lại tên của att
+const { fullName, studentAge, profile:{ studentID: stuId} } = person;
 console.log(fullName, studentAge);
 
 // React props destructuring
@@ -163,6 +167,7 @@ console.log(first, second);
 Description:
 - Gom nhiều tham số thành 1 mảng
 - Hay dùng khi xử lý nhiều data
+- Lấy những thằng còn lại 
 ================================================================ */
 
 const total = (...nums) => {
@@ -170,6 +175,12 @@ const total = (...nums) => {
 };
 
 console.log(total(1, 2, 3, 4));
+
+var arr = ['Java', 'PHP', "C#"];
+
+var [a, ...c] = arr;
+
+console.log(a, c);
 
 
 /* ================================================================
@@ -194,6 +205,7 @@ console.log(highlight`Hello ${name}`);
 Description:
 - Copy mảng hoặc object
 - React dùng rất nhiều khi update state
+- Vẫn dùng ...
 ================================================================ */
 
 // Copy array
