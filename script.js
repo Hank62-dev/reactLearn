@@ -229,6 +229,10 @@ Description:
 // Ví dụ (giả lập, không chạy trong cùng file)
 
 // export const multiply = (a, b) => a * b;
+// export default function; mỗi module chỉ được 1 default
+//
+
+//import * as Name from "path" : import tất cả các export kh phải default sang 1 tên khác thành 1 object
 
 // import { multiply } from "./math";
 // console.log(multiply(2, 3));
