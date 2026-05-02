@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"></script> 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- 
+    
+    JSX -> Javascript XML
+
+    1. Luôn dùng React.createElement()? Vấn đề?
+    2. JSX? live demo: https://bit.ly/2VOIMN7
+    3. JSX không phải là html,
+        Cần có Javascript, Babel để dùng JSX
+    4. JSX và React-DOM?
+    
+    -->
+    <script type="text/babel">
+    const App = () => {
+        return (
+        <div className="post-item">
+            <h2 title="Học React tại ReactDoc">Học ReactJS</h2>
+            <p style={{color: 'red'}} >Học ReactJS cơ bản tới nâng cao</p>
+        </div>
+        );
+    };
+        // style={{ color: 'red' }}
+        // {} bên ngoài: dùng để viết JavaScript trong JSX
+        // {} bên trong: là object JavaScript (CSS inline)
+
+        // JSX: <p style={{ color: 'red' }}>...</p>
+        // Sau khi Babel convert:
+        // React.createElement("p", 
+        //    {style: { color: "red" } }
+        // );
+    ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
