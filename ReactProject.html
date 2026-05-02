@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJs</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+
+</head>
+<body>
+    <!-- 
+    
+    1. React.createElement() -> React element
+    2. So sánh với document.createElement -> DOM element
+    3. Thay đổi: Id, className, style, ...
+    4. Thêm: text, HTML
+    5. Tạo: 
+            <h1 title="Hello" class="heading">Hello World!</h1>
+    6. Tạo: 
+        <ul>
+            <li>Javascript</li>
+            <li>ReactJS</li>
+
+        </ul>
+    7. Tạo: 
+        <div class="post-item">
+            <h2 title="Học React tại ReactDoc">Học ReactJS</h2>
+            <p>Học ReactJS cơ bản tới nâng cao</p>
+        </div>
+    -->
+    
+    <script>
+        //5.
+        //DOM
+        const h1Dom = document.createElement('h1');
+        h1Dom.title = 'Hello'
+        h1Dom.className = 'Hello guys!'
+
+        h1Dom.innerText = "Hello World"
+
+        document.body.appendChild(h1Dom)
+
+        //React
+        //React.createElement(Type, props, children)
+        const h1React = React.createElement('h1', {
+            title: "Hello",
+            className: "heading"
+        }, 'Hello wordl!');
+
+        console.dir(h1Dom)
+        console.dir(h1React)
+        
+        //-------------------------------------------------------------
+        //6.
+        //DOM
+
+        const ulDom = document.createElement('ul');
+        const liDom1 = document.createElement('li');
+        liDom1.innerText = 'Javascript'
+        
+        const liDom2 = document.createElement('li');
+        liDom2.innerText = 'ReactJS'
+        
+        ulDom.appendChild(liDom1)
+        ulDom.appendChild(liDom2)
+
+        document.body.appendChild(ulDom)
+
+
+        //React
+        const ulReact = React.createElement(
+            'ul',
+            null,
+            React.createElement('li', null, 'Javascript'), 
+            React.createElement('li', null, 'ReactJs') 
+        )
+
+        console.log(ulReact)
+
+
+        //------------------------
+        //7.
+        //<div class="post-item">
+        //    <h2 title="Học React tại ReactDoc">Học ReactJS</h2>
+        //    <p>Học ReactJS cơ bản tới nâng cao</p>
+        //</div>
+
+        //React
+        const divReact = React.createElement(
+            'div',
+            {className: 'post-item'},
+            React.createElement(
+                'h2',
+                {title: 'Học React tại Reacdoc'},
+                'Học ReactJS'
+            ),
+            React.createElement(
+                'p',
+                {},
+                'Học ReactJS cơ bản tới nâng cao')
+        )
+
+
+    </script>
+
+</body>
+</html>
