@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactDom</title>
+    <script crossorigin src="https://unpkg.com/react@18.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"></script> 
+
+</head>
+<body>
+    <!-- 
+    1. Tại sao phải sự dụng React-Dom 
+    -> Để chúng ta có thể render element ra trình duyệt, cầu nối 
+    2. Tại sao lại tách React-Dom ra
+    -> React chỉ tạo UI (virtual DOM)
+        ReactDOM hiển thị UI đó lên trình duyệt
+        dùng React cho nhiều nền tảng (web, mobile, …)
+        không bị phụ thuộc vào browser
+    3. Render UI
+
+
+    React-Native -> build IOS, Android
+    -->
+    <div id="root"></div>
+
+    <script>
+        const postItem = React.createElement(
+            'div',
+            {className: 'post-item'},
+            React.createElement(
+                'h2',
+                {title: 'Học React tại Reacdoc'},
+                'Học ReactJS'
+            ),
+            React.createElement(
+                'p',
+                {},
+                'Học ReactJS cơ bản tới nâng cao')
+        )
+
+        //Get root element
+        const containerRoot = document.getElementById('root')
+
+        //React-DOM -> render UI
+        ReactDOM.render(postItem, root)
+        //ReactDOM.render(element, container, callback)
+        
+
+        //React ver 18 React-DOM
+
+        const root = ReactDom.createRoot(containerRoot);
+        root.render(postItem)
+    </script>
+</body>
+</html>
